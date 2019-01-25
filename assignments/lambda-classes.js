@@ -32,15 +32,16 @@ class Student extends Person {
         this.previousBackground = attributes.previousBackground;
         this.className = attributes.className;
         this.favSubjects = attributes.favSubjects;
+        this.grade = Math.floor(Math.random * 10)
     }
     listsSubjects() {
         return this.favSubjects.forEach(element => {console.log(element)});
     }
     PRAssignment(subject) {
-        return `${this.name} has submitted a PR for ${subject}`;
+        return `${this.name} has submitted a PR for ${subject}.`;
     }
     sprintChallenge(subject) {
-        return `${this.name} has begun sprint challenge on ${subject}`;
+        return `${this.name} has begun sprint challenge on ${subject}.`;
     }
 }
 
@@ -53,8 +54,8 @@ class ProjectManager extends Instructor {
     standUp(channel) {
         return `${this.name} announces to ${channel}, @channel standy times!`;
     }
-    debugsCode(student) {
-        return `${this.name} debugs ${student.name}`;
+    debugsCode(student, subject) {
+        return `${this.name} debugs ${student.name}'s code on ${subject}.`;
     }
 }
 
@@ -97,16 +98,16 @@ const fred = new Instructor({
     favSubjects: [`Biology`, `Python`, `Machine Learning`],
   });
 
-  const rod = new Student({
+  const rylan = new Student({
     name: 'Rylan',
     location: 'American Canyon',
     age: 10,
     gender: 'male',
     className: `FSWPT4`,
-    favSubjects: [`iPAD`, `Machine Learning`],
+    favSubjects: [`iPad`, `Machine Learning`],
   });
 
-  const roenz = new Student({
+  const rufino = new Student({
     name: 'Rufino',
     location: 'Manila',
     age: 21,
@@ -133,7 +134,7 @@ const fred = new Instructor({
     favInstructor: `Cam`
   });
   
-  const chance = new ProjectManager({
+  const austen = new ProjectManager({
     name: 'Austen',
     location: 'Salt Lake City',
     age: 34,
@@ -142,7 +143,9 @@ const fred = new Instructor({
     favInstructor: `Diandra`
   });
 
-  console.log(roenz.listsSubjects())
-
-
-
+console.log(josh.demo(`Python`));
+console.log(cam.grade(roenz,`Javascript`));
+console.log(roenz.PRAssignment(`Javascript`));
+console.log(rylan.sprintChallenge(`iPad`));
+console.log(austen.standUp(`FSWPT4`));
+console.log(chance.debugsCode(roenz, `classes`))
