@@ -22,8 +22,18 @@ class Instructor extends Person {
         return `Today we are learning about ${subject}.`
     }
     grade(student, subject) {
-        return `${student.name} receives a perfect score on ${subject}!`
+        //Creating a random number
+        let randomNum = Math.floor(Math.random() * 10)
+        randomNum > 5 ? randomNum *= 1 : randomNum *= -1;
+        if(randomNum > 1){
+            console.log(`${student.name} receives an additional ${randomNum} points to his grade on ${subject} `)
+        } else {
+            console.log(`${student.name} receives a deduction of ${randomNum} points to his grade on ${subject} `)
+        }
+        randomNum += student.grade
+        console.log(`${student.name}'s grade is now ${student.grade} `)
     }
+    
 }
 
 class Student extends Person {
@@ -32,7 +42,7 @@ class Student extends Person {
         this.previousBackground = attributes.previousBackground;
         this.className = attributes.className;
         this.favSubjects = attributes.favSubjects;
-        this.grade = Math.floor(Math.random * 10)
+        this.grade = Math.floor(Math.random() * 100)
     }
     listsSubjects() {
         return this.favSubjects.forEach(element => {console.log(element)});
@@ -42,6 +52,13 @@ class Student extends Person {
     }
     sprintChallenge(subject) {
         return `${this.name} has begun sprint challenge on ${subject}.`;
+    }
+    graduate() {
+        if(this.grade > 70){
+            return `${this.name} has a score over 70% he has graduated from Lambda School!`
+        } else {
+            return `${this.name} has a score less than 70% he must go to async!`
+        }
     }
 }
 
@@ -149,3 +166,5 @@ console.log(roenz.PRAssignment(`Javascript`));
 console.log(rylan.sprintChallenge(`iPad`));
 console.log(austen.standUp(`FSWPT4`));
 console.log(chance.debugsCode(roenz, `classes`))
+console.log(roenz.graduate())
+console.log(roenz.grade)
