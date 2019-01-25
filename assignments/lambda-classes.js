@@ -70,7 +70,7 @@ const fred = new Instructor({
 
   const josh = new Instructor({
     name: 'Josh',
-    location: 'Knell',
+    location: 'Houston',
     age: 32,
     gender: 'male',
     favLanguage: 'C',
@@ -80,10 +80,69 @@ const fred = new Instructor({
 
   const cam = new Instructor({
     name: 'Cameron',
-    location: 'Pope',
+    location: 'Long Island',
     age: 35,
     gender: 'male',
     favLanguage: 'Python',
     specialty: 'Front-end',
     catchPhrase: `Derp`
   });
+
+  const roenz = new Student({
+    name: 'Roenz',
+    location: 'San Francisco',
+    age: 24,
+    gender: 'male',
+    className: `FSWPT4`,
+    favSubjects: [`Biology`, `Python`, `Machine Learning`],
+  });
+
+  const rod = new Student({
+    name: 'Rylan',
+    location: 'American Canyon',
+    age: 10,
+    gender: 'male',
+    className: `FSWPT4`,
+    favSubjects: [`iPAD`, `Machine Learning`],
+  });
+
+  const roenz = new Student({
+    name: 'Rufino',
+    location: 'Manila',
+    age: 21,
+    gender: 'male',
+    className: `FSWPT4`,
+    favSubjects: [`Marketing`, `Watches`],
+  });
+
+  const joe = new ProjectManager({
+    name: 'Joe',
+    location: 'DBZ Poster',
+    age: 30,
+    gender: 'male',
+    gradClassName: `CS8`,
+    favInstructor: `Josh`
+  });
+
+  const chance = new ProjectManager({
+    name: 'Chance',
+    location: 'East Coast',
+    age: 27,
+    gender: 'male',
+    gradClassName: `CS8`,
+    favInstructor: `Cam`
+  });
+  
+  const chance = new ProjectManager({
+    name: 'Austen',
+    location: 'Salt Lake City',
+    age: 34,
+    gender: 'male',
+    gradClassName: `CS1`,
+    favInstructor: `Diandra`
+  });
+
+  console.log(roenz.listsSubjects())
+
+
+
